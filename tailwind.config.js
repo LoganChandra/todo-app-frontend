@@ -1,0 +1,55 @@
+module.exports = {
+  purge: ["./public/index.html", "./src/**/*.{vue,js}"],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {
+      fontSize: {
+        xs: "12px",
+        sm: "14px",
+        base: "16px",
+        lg: "28px",
+      },
+      fontFamily: {
+        body: ['"Raleway"'],
+      },
+      colors: {
+        "primary-1": "#ED2224",
+        "primary-2": "#282464",
+        "primary-3": "#0097A7",
+        "pdf-1": "#FF0000",
+        "pdf-2": "#161435",
+        "pdf-3": "#999999",
+        "pdf-4": "#FFD966",
+        "pdf-5": "#0097A7",
+        "pdf-6": "#F7DD4A",
+        "base-black": "#000000",
+        "base-dark-gray": "#51525A",
+        "base-gray": "#A9A9A9",
+        "app-gray": "#E5E5E5",
+        "base-gray-light2": "#E6E6E6",
+        "base-gray-light1": "#F5F5F5",
+        "transparent-black-8": "#0000000A",
+        "transparent-black-4": "#00000014",
+        "transparent-white-16": "rgba(255, 255, 255, 0.16)",
+        "transparent-white-12": "#rgba(255, 255, 255, 0.12)",
+        "transparent-primary-12": "rgba(237, 34, 36, 0.12)",
+        "transparent-primary-8": "rgba(237, 34, 36, 0.08)",
+        "transparent-primary-4": "rgba(237, 34, 36, 0.04)",
+        positive: "#10C300",
+      },
+      borderWidth: {
+        DEFAULT: "1px",
+        0: "0",
+        2: "2px",
+        3: "3px",
+        4: "4px",
+        6: "6px",
+        8: "8px",
+      },
+    },
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
