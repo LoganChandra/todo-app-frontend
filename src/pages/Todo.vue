@@ -22,7 +22,7 @@
             }
           "
           label="NAME"
-          placeholder="eg. John Wick"
+          placeholder="eg. Watch John Wick"
         />
       </div>
 
