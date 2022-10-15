@@ -251,4 +251,7 @@ input:active {
   outline: none;
   width: 200px;
 }
+.va-input-wrapper__container {
+  @apply w-full
+}
 </style>
