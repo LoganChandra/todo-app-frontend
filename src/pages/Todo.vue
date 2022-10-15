@@ -252,6 +252,6 @@ input:active {
   width: 200px;
 }
 .va-input-wrapper__container {
-  @apply w-full
+  width: 100% !important
 }
 </style>
