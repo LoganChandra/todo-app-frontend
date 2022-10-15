@@ -2,13 +2,13 @@
 import { createWebHistory, createRouter } from "vue-router";
 
 // pages
-import Home from "./pages/Home.vue";
+import Todo from "./pages/Todo.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "Todo",
+    component: Todo,
   }
 ];
 
@@ -18,7 +18,7 @@ const router = createRouter({
 });
 router.beforeEach(async (to, from, next) => {
   console.log("to, from", to, from);
-  if (to.name != "Home") {
+  if (to.name != "Todo") {
     next({
       path: "/",
     });
