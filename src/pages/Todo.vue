@@ -172,6 +172,9 @@ export default {
     async "$store.state.todo.currentPage"() {
       await this.loadTableData(this.$store.state.todo.search);
     },
+    async "$store.state.todo.perPage"() {
+      await this.loadTableData(this.$store.state.todo.search);
+    },
   },
   methods: {
     showEditTaskModal(idx) {
