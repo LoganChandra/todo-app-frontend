@@ -46,12 +46,12 @@
     >
       <!-- TRUNCATING NAME FIELD USING INPUT -->
       <template #cell(name)="{ value }">
-        <input :value="value" class="border-0" />
+        <input readonly :value="value" class="border-0" />
       </template>
 
       <!-- TRUNCATING DESCRIPTION FIELD USING INPUT -->
       <template #cell(description)="{ value }">
-        <input :value="value" class="border-0" style="width: 300px" />
+        <input readonly :value="value" class="border-0" style="width: 300px" />
       </template>
 
       <!-- FORMATING DATE FIELDS -->
