@@ -100,14 +100,14 @@
             >
               <!-- NAME INPUT -->
               <va-input
-                class="flex w-full"
+                class="flex flex-col w-full"
                 label="NAME"
                 v-model="$store.state.todo.addTaskPayload.name"
               />
 
               <!-- DESCRIPTION INPUT -->
               <va-input
-                class="flex w-full"
+                class="flex flex-col w-full"
                 v-model="$store.state.todo.addTaskPayload.description"
                 type="textarea"
                 label="DESCRIPTION"
@@ -116,7 +116,7 @@
               />
 
               <!-- DATE PICKER -->
-              <p class="flex flex-col text-sm font-semibold" style="color: #2c82e0">
+              <p class="text-sm font-semibold" style="color: #2c82e0">
                 DUE DATE
               </p>
               <va-date-picker
