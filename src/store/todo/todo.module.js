@@ -20,6 +20,7 @@ export default {
             search: "",
             perPage: 8,
             currentPage: 1,
+            totalCount: 0
         };
     },
     mutations: {
@@ -46,6 +47,9 @@ export default {
         },
         setCurrentPage(state, val) {
             state.currentPage = val
+        },
+        setTotalCount(state, val) {
+            state.totalCount = val
         }
     },
     actions: {},

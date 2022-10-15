@@ -38,9 +38,7 @@
     <va-data-table
       :items="$store.state.todo.tableData"
       :columns="$store.state.todo.columns"
-      :per-page="$store.state.todo.perPage"
-      :current-page="$store.state.todo.currentPage"
-      :loading="isLoading"
+      :loading="$store.state.todo.isLoading"
       v-model:sort-by="$store.state.todo.sortBy"
       v-model:sorting-order="$store.state.todo.sortingOrder"
     >
@@ -147,20 +145,19 @@
 <script>
 export default {
   name: "Todo",
-  components: {},
   async created() {
     // LOAD DATA
     await this.loadTableData("");
   },
   computed: {
     pages() {
+      // CALCULATE PAGES
       return this.$store.state.todo.perPage &&
         this.$store.state.todo.perPage !== 0
         ? Math.ceil(
-            this.$store.state.todo.tableData.length /
-              this.$store.state.todo.perPage
+            this.$store.state.todo.totalCount / this.$store.state.todo.perPage
           )
-        : this.$store.state.todo.tableData.length;
+        : this.$store.state.todo.totalCount;
     },
   },
   watch: {
@@ -171,6 +168,9 @@ export default {
           description: "",
           dueDate: new Date(),
         });
+    },
+    async "$store.state.todo.currentPage"() {
+      await this.loadTableData(this.$store.state.todo.search);
     },
   },
   methods: {
@@ -224,11 +224,25 @@ export default {
       await this.loadTableData("");
     },
     async loadTableData(search) {
+      // START LOADING
+      this.$store.commit("todo/setIsLoading", true);
+
+      // GET TASKS
       const res = await this.$store.dispatch("api/get", {
         route: "task",
-        queryStringParameters: { search },
+        queryStringParameters: {
+          search,
+          page: this.$store.state.todo.currentPage,
+          pageSize: this.$store.state.todo.perPage,
+        },
       });
-      this.$store.commit("todo/setTableData", res.data);
+
+      // ASSIGN DATA TO STORE
+      this.$store.commit("todo/setTableData", res.data.tasks);
+      this.$store.commit("todo/setTotalCount", res.data.totalCount);
+
+      // STOP LOADING
+      this.$store.commit("todo/setIsLoading", false);
     },
     formatDate(value) {
       return (
