@@ -1,6 +1,6 @@
 import axios from "axios";
-let API_URL = process.env.API_URL
-console.log("process.env", process.env);
+let API_URL = process.env.API_URL || "https://todo-or-not-todo-app-backend.herokuapp.com"
+
 export default {
   namespaced: true,
   state() {
