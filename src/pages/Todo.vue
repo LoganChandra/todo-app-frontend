@@ -41,16 +41,23 @@
       :per-page="$store.state.todo.perPage"
       :current-page="$store.state.todo.currentPage"
       :loading="isLoading"
-      :striped="true"
       v-model:sort-by="$store.state.todo.sortBy"
       v-model:sorting-order="$store.state.todo.sortingOrder"
     >
-      <!-- FOMRATING DATE FIELDS -->
+      <!-- TRUNCATING NAME FIELD USING INPUT -->
+      <template #cell(name)="{ value }">
+        <input :value="value" class="border-0" />
+      </template>
+
+      <!-- TRUNCATING DESCRIPTION FIELD USING INPUT -->
+      <template #cell(description)="{ value }">
+        <input :value="value" class="border-0" style="width: 300px" />
+      </template>
+
+      <!-- FORMATING DATE FIELDS -->
       <template #cell(dueDate)="{ value }">
         {{ formatDate(value) }}
       </template>
-
-      <!-- FOMRATING DATE FIELDS -->
       <template #cell(createDate)="{ value }">
         {{ formatDate(value) }}
       </template>
@@ -233,3 +240,15 @@ export default {
   },
 };
 </script>
+<style lang="postcss" scoped>
+input {
+  border: none;
+  outline: none;
+  width: 200px;
+}
+input:active {
+  border: none;
+  outline: none;
+  width: 200px;
+}
+</style>
