@@ -245,11 +245,7 @@ export default {
       this.$store.commit("todo/setIsLoading", false);
     },
     formatDate(value) {
-      return (
-        new Date(Number(value)).toDateString() +
-        " " +
-        new Date(Number(value)).toLocaleTimeString().slice(0, 5)
-      );
+      return new Date(Number(value)).toDateString();
     },
   },
 };
