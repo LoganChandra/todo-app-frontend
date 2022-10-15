@@ -18,7 +18,7 @@ export default {
             addTaskPayload: { name: "", description: "", dueDate: new Date() },
             tableData: [],
             search: "",
-            perPage: 10,
+            perPage: 8,
             currentPage: 1,
         };
     },

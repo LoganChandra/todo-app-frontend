@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10 mx-20">
+  <div class="mt-10 mx-20 mb-10">
     <!-- FILTERS AND ADD BUTTON -->
     <div class="flex flex-row justify-between">
       <!-- FILTER INPUTS -->
