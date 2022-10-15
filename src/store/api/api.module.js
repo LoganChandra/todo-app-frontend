@@ -1,5 +1,6 @@
 import axios from "axios";
 let API_URL = process.env.API_URL
+console.log("process.env", process.env);
 export default {
   namespaced: true,
   state() {
