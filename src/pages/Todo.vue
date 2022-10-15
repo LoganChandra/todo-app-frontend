@@ -199,7 +199,7 @@ export default {
         ...this.$store.state.todo.addTaskPayload,
       };
       await this.$store.dispatch("api/post", {
-        route: "task/add",
+        route: "task",
         body: payload,
       });
 
@@ -213,7 +213,7 @@ export default {
         ...this.$store.state.todo.addTaskPayload,
       };
       await this.$store.dispatch("api/patch", {
-        route: "task/update",
+        route: "task",
         body: payload,
         pathParam: this.$store.state.todo.addTaskPayload.taskId,
       });
@@ -225,7 +225,7 @@ export default {
     },
     async loadTableData(search) {
       const res = await this.$store.dispatch("api/get", {
-        route: "task/list",
+        route: "task",
         queryStringParameters: { search },
       });
       this.$store.commit("todo/setTableData", res.data);
