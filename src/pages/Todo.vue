@@ -116,7 +116,7 @@
               />
 
               <!-- DATE PICKER -->
-              <p class="text-sm font-semibold" style="color: #2c82e0">
+              <p class="flex flex-col text-sm font-semibold" style="color: #2c82e0">
                 DUE DATE
               </p>
               <va-date-picker
@@ -250,8 +250,5 @@ input:active {
   border: none;
   outline: none;
   width: 200px;
-}
-.va-input-wrapper__container {
-  width: 100% !important
 }
 </style>
