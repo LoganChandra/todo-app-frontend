@@ -174,6 +174,7 @@ export default {
     },
     async "$store.state.todo.perPage"() {
       await this.loadTableData(this.$store.state.todo.search);
+      this.$store.commit("todo/setCurrentPage", 1);
     },
   },
   methods: {
