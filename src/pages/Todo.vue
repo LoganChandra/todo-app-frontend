@@ -176,6 +176,9 @@ export default {
       await this.loadTableData(this.$store.state.todo.search);
       this.$store.commit("todo/setCurrentPage", 1);
     },
+    async "$store.state.todo.search"() {
+      this.$store.commit("todo/setCurrentPage", 1);
+    },
   },
   methods: {
     showEditTaskModal(idx) {
